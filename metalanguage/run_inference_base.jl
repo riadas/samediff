@@ -67,11 +67,11 @@ pretty_spec_names = Dict([
 ])
 
 # plot
-p = plot(1:max_repeats, collect(1:max_repeats) * 1/max_repeats, color="white", label=false, xticks=0:1:max_repeats, size=(800,600))
+p = plot(1:max_repeats, collect(1:max_repeats) * 1/max_repeats, color="white", label=false, xticks=0:1:max_repeats, size=(800,600), dpi=600)
 for spec in specs
     spec_name = manually_defined[spec] 
     println(spec_name)
-    p = plot!(collect(1:max_repeats), results[spec] ./ sums, label = "$(pretty_spec_names[spec_name])", legend=:outerbottom, xticks=0:1:max_repeats, size=(800,600))
+    p = plot!(collect(1:max_repeats), results[spec] ./ sums, label = "$(pretty_spec_names[spec_name])", legend=:outerbottom, xticks=0:1:max_repeats, size=(800,600), dpi=600)
 end
 
 xlabel!("Training Data Volume", xguidefontsize=9)
